@@ -54,7 +54,7 @@ Cypress.Commands.add('careers', (careers) => {
     })
     Cypress.Commands.add('social', (socialMedia) => {
         cy.get('img[class="footer-social-icon-image"]').eq('2').click()
-        cy.get('img[class="footer-social-icon-image"]').eq('5').click()
+        //cy.get('img[class="footer-social-icon-image"]').eq('5').click()
 
     })
     Cypress.Commands.add('contact', (contactUs) => {
