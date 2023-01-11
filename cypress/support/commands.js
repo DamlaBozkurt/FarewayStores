@@ -1,28 +1,4 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
 
 Cypress.Commands.add('online', (email, password) => {
     cy.get('a[href="https://shop.fareway.com/"]').eq('2').click()
@@ -31,11 +7,19 @@ Cypress.Commands.add('online', (email, password) => {
     cy.get('div[class="btn primary-btn store-select-option-btn b_header-button-color au-target"]').click()
     cy.get('li[au-target-id="165"]').click()
 })
-Cypress.Commands.add('careers', (careers) => {
+//Cypress.Commands.add('careers', (careers) => {
     //cy.get('a[href="/careers/"]').eq('1').trigger('mouseover')
-   // cy.get('a').invoke('removeAttr', 'target')
+    //cy.get('a').invoke('removeAttr', 'target')
     //cy.contains('input[placeholder="Search Job Title or Keywords"]').should('have.attr', 'id', 'code-snippet')
-    //cy.get('a[href="/careers/view-opportunities/"]').eq('1').click()
+    //cy.get('a[href="/careers/view-opportunities/"]').eq('1').should('have.text', 'View Opportunities').click({force: true})
+    //cy.origin('https://secure2.entertimeonline.com', () => {
+        //cy.visit('/')
+        //cy.get('button[class="btn btn-primary apply-action"]').eq('0').invoke('textContent') 
+      //}).should('equal', 'Apply for Job')
+  
+   
+    
+   // cy.get('h4[class="list-item-title"]').should('have.text', 'Grocery Clerk').click()
     //cy.get('button[class="btn btn-primary apply-action"]').eq('1').click()
     //cy.get('input[placeholder="Search Job Title or Keywords"]').click()
     
@@ -51,7 +35,7 @@ Cypress.Commands.add('careers', (careers) => {
     
     //cy.get('a[href="/careers/"]').eq('2').click()
     //cy.get('a[href="/careers/new-store-hiring-events/"]').eq('2').click();
-    })
+    //})
     Cypress.Commands.add('social', (socialMedia) => {
         cy.get('img[class="footer-social-icon-image"]').eq('2').click()
         //cy.get('img[class="footer-social-icon-image"]').eq('5').click()
