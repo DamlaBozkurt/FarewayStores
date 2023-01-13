@@ -4,8 +4,8 @@ Cypress.Commands.add('online', (email, password) => {
     cy.get('a[href="https://shop.fareway.com/"]').eq('2').click()
     //cy.get('compose[view="components/store-selector/templates/store-selector-list-item.html"]').click()
     //cy.get('li[class="store-select-store au-target"]').click()
-    cy.get('div[class="btn primary-btn store-select-option-btn b_header-button-color au-target"]').click()
-    cy.get('li[au-target-id="165"]').click()
+   // cy.get('div[class="btn primary-btn store-select-option-btn b_header-button-color au-target"]').click()
+    //cy.get('li[au-target-id="165"]').click()
 })
 //Cypress.Commands.add('careers', (careers) => {
     //cy.get('a[href="/careers/"]').eq('1').trigger('mouseover')
@@ -38,11 +38,23 @@ Cypress.Commands.add('online', (email, password) => {
     //})
     Cypress.Commands.add('social', (socialMedia) => {
         cy.get('img[class="footer-social-icon-image"]').eq('2').click()
-        //cy.get('img[class="footer-social-icon-image"]').eq('5').click()
+        cy.get('img[class="footer-social-icon-image"]').eq('5').click()
 
     })
     Cypress.Commands.add('contact', (contactUs) => {
         cy.get('a[href="/about/contact-us/"]').eq('1').click()
+        cy.get('input[id="fid-field$your-email-address$1543"]').click().type('abraam')
+        cy.get('form[id="form_fareway-contact-us"]').click()
+        cy.get('td[class="cms_field"]').eq('1').click()
+        cy.get('select[id="fid-field$feedback-topic$1540"]').select('New Locations').eq('0')
+        cy.get('input[name="field$first-name$1663$1540"]').click({force: true}).type('DD')
+        cy.get('input[name="field$last-name$1666$1540"]').click().type('1ll')
+        cy.get('input[name="field$phone-number$1672$1540"]').click().type('dipcik')
+        cy.get('input[name="field$street-address$1675$1540"]').click().type('Etimesgut')
+        cy.get('input[name="field$city$1678$1540"]').click().type('A')
+        cy.get('select[id="fid-field$state$1681$1540"]').select('Idaho')
+        cy.get('input[name="field$zip-code$1684$1540"]').click().type('fşlf')
+        cy.get('input[class="js-submit-button cms_form_button primary"]').click()
     })
     
  
