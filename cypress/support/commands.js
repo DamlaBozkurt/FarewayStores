@@ -56,7 +56,40 @@ Cypress.Commands.add('online', (email, password) => {
         cy.get('input[name="field$zip-code$1684$1540"]').click().type('fşlf')
         cy.get('input[class="js-submit-button cms_form_button primary"]').click()
     })
-    
- 
+    Cypress.Commands.add('storesAds', (storesAds, weeklyAdEmail) => {
+        cy.get('a[href="/stores/"]').eq('2').click({force: true})
+        cy.get('input[id="zipCode"]').click().type('3535')
+        cy.get('input[name="isBakery"]').click()
+        cy.get('input[id="submitFormBtn"]').click()
+        cy.get('a[href="/stores/weekly-ad-email/"]').eq('1').click( {force: true})
+        cy.get('input[id="fid-field$email$779"]').click().type('DD')
+        cy.get('span[class="select2-selection__rendered"]').click()
+        cy.get('input[class="select2-search__field"]').click().type(352)
+        cy.get('input[class="js-submit-button cms_form_button primary"]').click( {force: true})
+        
+    })
+ Cypress.Commands.add('recipes', (recipes) => {
+        cy.get('a[href="/recipes/"]').eq('1').click()
+        cy.get('select[id="Category"]').select('Main Dishes')
+        cy.get('div[class="cards"]').click({force: true})
+        cy.get('a[href="/recipes/big-burger-bowl"]').eq('0').click()
+        cy.get('a[href="/recipes/"]').eq('1').click()
+        cy.get('input[id="Keywords"]').click().type('patlican')
+        cy.get('input[id="searchIcon"]').click()
+ })
+Cypress.Commands.add('cart', (CartToKitchen, TipsAndIdeas, Magazines, Videos) => {
+     cy.get('a[href="/tipsandideas/"]').eq('1').click()
+     cy.get('select[name="articleCategory"]').select('Fall and Winter')
+     cy.get('select[id="mediaType"]').select('Videos')
+     cy.get('a[href="/tipsandideas/last-minute-holiday-gift-ideas"]').eq('1').click()
+     cy.get('a[href="/tipsandideas/magazines-link/"]').eq('1').click({force: true})
+     cy.get('a[href="/tipsandideas/cart-to-kitchen-issue-45"]').click()
+     cy.get('a[href="/tipsandideas/videos-link/"]').eq('1').click( {force: true})
+     cy.get('a[href="/tipsandideas/easy-cheesy-pizza-dip"]').eq('1').click()
 
-    
+})
+Cypress.Commands.add('services', (services) => {
+    cy.get('a[href="/services/"]').eq('1').click()
+    cy.get('a[href="/services/bakeries/"]').eq('1').click( {force: true})
+    cy.get('a[href="/services/dietitian-services/"]').eq('1').click({force: true})
+})    
